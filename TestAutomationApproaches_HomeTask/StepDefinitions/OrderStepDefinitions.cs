@@ -23,7 +23,7 @@ namespace TestAutomationApproaches_HomeTask.StepDefinitions
             loginPO = new Login();
         }
 
-        [When(@"user enter username '([^']*)' and password '([^']*)'")]
+        [When(@"user enter (.*) (.*)")]
         public void WhenUserEnterUsernameAndPassword(string username, string password)
         {
             loginPO.addLoginCredentials(username, password);

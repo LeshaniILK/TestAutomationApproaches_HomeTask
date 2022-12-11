@@ -2,11 +2,18 @@
 
 Background: login
 	Given user in the login page to sign in
-	When user enter username 'standard_user' and password 'secret_sauce'
-	Then user will login to the Swag Labs
-
 
 @tag1
+Scenario Outline: Verify user can log in successfully
+	When user enter <username> <password>
+	Then user will login to the Swag Labs
+
+Examples: 
+		| username      | password     |
+		| standard_user | secret_sauce |
+
+
+@tag2
 Scenario: verify user can place a order
 	Given user in the product page
 	When user click on the product
